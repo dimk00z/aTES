@@ -1,0 +1,39 @@
+# Infra v 0.0.1
+
+users{
+managers
+managers.shape: person
+accountants
+accountants.shape: person
+other_users
+other_users.shape: person
+admins
+admins.shape: person
+}
+auth0:общий сервис авторизации
+auth0.shape: cloud
+aTES{
+task_tracker: Таск-трекер
+account: Аккаунтинг
+analytics: Аналитика
+auth: AuthZ|AuthN
+auth.shape: hexagon
+auth<->task_tracker
+auth<->analytics
+auth<->account
+data_bus: Шина
+data_bus.shape: queue
+data_bus<->task_tracker
+data_bus<->analytics
+data_bus<->account
+storage: Storage
+storage.shape:stored_data
+storage<->task_tracker
+storage<->analytics
+storage<->account
+storage<->auth
+}
+auth0<->aTES.auth
+users->aTES.task_tracker
+users->aTES.account
+users.admins->aTES.analytics

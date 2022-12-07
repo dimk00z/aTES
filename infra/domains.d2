@@ -1,0 +1,27 @@
+authDomain: Auth Domain{
+    auth
+    user
+    role
+    auth<-user->role
+}
+taskTrackerDomain: Tasks Tracker Domain{
+    user
+    task
+    status
+    assign
+    user->task->status
+    task->assign
+}
+acountingDomain: Accounting Domain{
+    user
+    task
+    price
+    record
+    balance
+    summary
+    user->task->price->record->balance->summary
+    record->summary
+}
+authDomain.user--taskTrackerDomain.user
+authDomain.user--acountingDomain.user
+taskTrackerDomain.task--acountingDomain.task

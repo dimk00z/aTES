@@ -13,3 +13,7 @@ run: `d2 --layout tala --theme 4 -w infra.d2 infra.png`
 
 ## EventStoring
 ![plot](./evenStorming.jpeg)
+
+## Domains
+
+![plot](./domains.png)
